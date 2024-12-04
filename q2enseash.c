@@ -39,7 +39,7 @@ int main() {
         pid_t pid = fork();
 
         if (pid == -1) {
-            write_message("Erreur de fork\n");
+            write_message("fork Error\n");
             continue;
         }
 
@@ -47,7 +47,7 @@ int main() {
             char *args[] = {input, NULL};
 
             if (execvp(input, args) == -1) {
-                write_message("Commande not found\n");
+                write_message("Command not found\n");
                 exit(1);
             }
         } else {
