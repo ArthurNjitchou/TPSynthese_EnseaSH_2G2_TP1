@@ -18,7 +18,7 @@ ssize_t read_input(char *buffer, size_t size) {
 int main() {
     char input[MAX_INPUT];
 
-    write_message("Bienvenue dans le Shell ENSEA.\n");
+    write_message("Welcome to ENSEA Tiny Shell.\n");
 
     while (1) {
         write_message("enseash %% ");
@@ -47,7 +47,7 @@ int main() {
             char *args[] = {input, NULL};
 
             if (execvp(input, args) == -1) {
-                write_message("Commande introuvable\n");
+                write_message("Commande not found\n");
                 exit(1);
             }
         } else {
@@ -55,7 +55,7 @@ int main() {
         }
     }
 
-    write_message("Au revoir !\n");
+    write_message("Bye bye...\n");
 
     return 0;
 }
