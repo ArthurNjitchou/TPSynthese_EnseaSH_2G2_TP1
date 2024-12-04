@@ -1,3 +1,4 @@
+//NJITCHOU Arthur & HAZAN Justine
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
