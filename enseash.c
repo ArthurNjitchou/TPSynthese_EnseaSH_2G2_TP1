@@ -19,25 +19,24 @@ ssize_t read_input(char *buffer, size_t size) {
 int main() {
     char input[MAX_INPUT];
 
-    write_message("Bienvenue dans le Shell ENSEA.\n");
-    write_message("Pour quitter, tapez 'exit'.\n");
+    write_message("Welcome to ENSEA Tiny Shell.\n");
+    write_message("Type 'exit' to quit.\n");
 
-    // Boucle principale du shell
     while (1) {
         write_message("enseash %% ");
 
         ssize_t bytes_read = read_input(input, MAX_INPUT);
 
-        // Si l'utilisateur tape Ctrl+D (EOF), quitter
+        // If user type Ctrl+D (EOF), exit
         if (bytes_read <= 0) {
             write_message("\n");
             break;
         }
 
-        // Suppression de caractère de nouvelle ligne (si présent)
+        
         input[strnlen(input, bytes_read) - 1] = '\0';
 
-        // Si l'utilisateur entre "exit", quitter le shell
+        // if user type "exit", exit shell
         if (strncmp(input, "exit", 4) == 0 && strnlen(input, bytes_read) == 4) {
             break;
         }
@@ -62,7 +61,7 @@ int main() {
         }
     }
 
-    write_message("Au revoir !\n");
+    write_message("Bye bye...\n");
 
     return 0;
 }
