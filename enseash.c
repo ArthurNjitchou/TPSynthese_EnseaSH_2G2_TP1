@@ -44,7 +44,7 @@ int main() {
         pid_t pid = fork();
 
         if (pid == -1) {
-            write_message("Erreur de fork\n");
+            write_message("fork error\n");
             continue;
         }
 
