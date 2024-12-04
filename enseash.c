@@ -24,10 +24,8 @@ int main() {
 
     // Boucle principale du shell
     while (1) {
-        // Affichage du prompt
         write_message("enseash %% ");
 
-        // Lire la commande entrée par l'utilisateur
         ssize_t bytes_read = read_input(input, MAX_INPUT);
 
         // Si l'utilisateur tape Ctrl+D (EOF), quitter
@@ -44,11 +42,9 @@ int main() {
             break;
         }
 
-        // Exécution de la commande
         pid_t pid = fork();
 
         if (pid == -1) {
-            // Erreur de fork
             write_message("Erreur de fork\n");
             continue;
         }
@@ -66,7 +62,6 @@ int main() {
         }
     }
 
-    // Message de sortie
     write_message("Au revoir !\n");
 
     return 0;
